@@ -1,23 +1,18 @@
-import logo from './logo.svg';
+// import logo from './logo.svg';
+import { Routes, Route } from "react-router-dom";
 import './App.css';
+import ApiTest from "./components/ApiTest";
+import Dashboard from './components/Dashboard';
+import MapSearch from "./components/MapSearch";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="app-cont">
+      <Routes>
+        <Route path="/" element={<Dashboard/>}/>
+        <Route path="/mapsearch" element={<MapSearch/>}/>
+        <Route path="/testapi" element={<ApiTest/>}/>
+      </Routes>
     </div>
   );
 }

@@ -1,0 +1,49 @@
+.container {
+  display: flex;
+  justify-content: space-between;
+  padding: 5px;
+}
+
+.map-container {
+  height: 80vh;
+  width: 50vw;
+  position: relative;
+}
+
+.info-container {
+  width: 50vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.searchbar {
+  position: absolute;
+  top: 1%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  max-width: 400px;
+  z-index: 5;
+}
+
+.searchbar input {
+  padding: 5px;
+  font-size: 20px;
+  width: 100%;
+}
+
+.locate-user {
+  position: absolute;
+  top: 2%;
+  right: 5%;
+  z-index: 10;
+  background: none;
+  border: none;
+}
+
+.locate-user img {
+  width: 30px;
+  cursor: pointer;
+}

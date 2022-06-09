@@ -1,0 +1,96 @@
+@import url('https://fonts.googleapis.com/css2?family=Archivo:wght@300;400;600;800;900&display=swap');
+
+.main-section {
+  background-image: url('../assets/nightmesa.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100vh;
+  width: 100vw;
+}
+
+.title-cont {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+  position: relative;
+}
+
+.text-cont {
+  position: relative;
+  text-align: center;
+  height: 80vh;
+  width: 70vw;
+  margin-bottom: 10px;
+  background: url('../assets/car.gif');
+  background-position: 35% -90%;
+  background-size: 80%;
+  background-clip: inherit;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.text-cont h1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.title-cont h1 {
+  font-size: 50vh;
+  letter-spacing: -60px;
+  font-family: 'Archivo', sans-serif;
+  font-weight: 900;
+}
+
+.title-cont h4 {
+  font-size: 10vh;
+  font-family: 'Archivo', sans-serif;
+  font-weight: 600;
+  margin-left: 40px;
+}
+
+.title-cont video {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.h1-cont {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* SECOND SECTION */
+
+.second-section {
+  background-image: url('../assets/grandC.jpg');
+  background-size: cover;
+  height: 100vh;
+  width: 100vw;
+}
+
+.second-title-cont {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+  padding-bottom: 100px;
+  color: rgba(0, 0, 0, 0.671);
+}
+
+.second-title {
+  font-size: 30vh;
+  font-family: 'Archivo', sans-serif;
+  font-weight: 800;
+}
+
+.second-subtitle {
+  font-size: 10vh;
+}
