@@ -8,7 +8,7 @@ const ApiTest = () => {
     method: 'POST',
     headers: {
       'content-type': 'application/json',
-      'X-RapidAPI-Key': '2942f6734bmsh26a297b63d78f09p11c2b7jsn20723fedded5',
+      'X-RapidAPI-Key': process.env.RAPID_API_KEY,
       'X-RapidAPI-Host': 'travel-advisor.p.rapidapi.com',
     },
     body: '{"geoId":304097,"startDate":"2022-03-29","endDate":"2022-03-30","pax":[{"ageBand":"ADULT","count":2}],"sort":"TRAVELER_FAVORITE_V2","sortOrder":"asc","filters":[{"id":"category","value":["11873"]}],"updateToken":""}',
@@ -26,10 +26,10 @@ const ApiTest = () => {
             (el) => el.singleCardContent
           )
         );
-        // console.log(response.data.AppPresentation_queryAppListV2[0]);
         setData(
-          response.data.AppPresentation_queryAppListV2[0].sections[1]
-            .singleCardContent
+          response.data.AppPresentation_queryAppListV2[0].sections.filter(
+            (el) => el.singleCardContent
+          )
         );
       })
       .catch((err) => console.error(err));
@@ -38,7 +38,7 @@ const ApiTest = () => {
   return (
     <div className="container">
       <h1>Testing Endpoint</h1>
-      <p>{data ? data.cardTitle.string : 'not found'}</p>
+      {/* <p>{data[0] ? data[0].cardTitle.string : 'not found'}</p> */}
       {/* <img
         className="img1"
         src={data[0] ? data[0].image.photo.photoSizes[0].url : ''}

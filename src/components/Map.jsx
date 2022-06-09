@@ -41,8 +41,7 @@ const options = {
 //   method: 'GET',
 //   headers: {
 //     'X-RapidAPI-Host': 'travel-advisor.p.rapidapi.com',
-//     'X-RapidAPI-Key': 'ee64745efcmsh1b31d17606da657p1000b8jsnfab8e872c7a9',
-//     // 'X-RapidAPI-Key': '5e53a89dabmshcd1b511f55836dcp1eb6b2jsn24ec7626d14c'
+//     'X-RapidAPI-Key': process.env.RAPID_API_KEY,
 //   },
 // };
 
