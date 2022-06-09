@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import '../styles/ApiTest.css';
+// require('dotenv').config();
 
 const ApiTest = () => {
   const [data, setData] = useState();
@@ -8,7 +9,7 @@ const ApiTest = () => {
     method: 'POST',
     headers: {
       'content-type': 'application/json',
-      'X-RapidAPI-Key': process.env.RAPID_API_KEY,
+      'X-RapidAPI-Key': process.env.REACT_APP_RAPID_API_KEY,
       'X-RapidAPI-Host': 'travel-advisor.p.rapidapi.com',
     },
     body: '{"geoId":304097,"startDate":"2022-03-29","endDate":"2022-03-30","pax":[{"ageBand":"ADULT","count":2}],"sort":"TRAVELER_FAVORITE_V2","sortOrder":"asc","filters":[{"id":"category","value":["11873"]}],"updateToken":""}',
