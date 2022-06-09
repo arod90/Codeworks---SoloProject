@@ -22,6 +22,9 @@ import suitcase from '../assets/svg/suitcase.svg';
 import locateUser from '../assets/svg/find3.svg';
 import '@reach/combobox/styles.css';
 import '../styles/Map.css';
+import Attractions from './Attractions';
+import Restaurants from './Restaurants';
+import Hotels from './Hotels';
 
 // VARIABLES
 
@@ -37,13 +40,13 @@ const options = {
   rotateControl: true,
 };
 
-// const fetchOptions = {
-//   method: 'GET',
-//   headers: {
-//     'X-RapidAPI-Host': 'travel-advisor.p.rapidapi.com',
-//     'X-RapidAPI-Key': process.env.RAPID_API_KEY,
-//   },
-// };
+const fetchOptions = {
+  method: 'GET',
+  headers: {
+    'X-RapidAPI-Key': process.env.REACT_APP_RAPID_API_KEY,
+    'X-RapidAPI-Host': 'travel-advisor.p.rapidapi.com',
+  },
+};
 
 // COMPONENT
 
@@ -57,10 +60,7 @@ const Map = () => {
   const [selected, setSelected] = useState(null);
   const [data, setData] = useState([]);
   const [adr, setAdr] = useState('');
-
-  // let newAdr = adr.replace(/ /g, '%20');
-  // let formattedAdr = newAdr.replace(/,/g, '');
-  // console.log(formattedAdr);
+  const [geoId, setGeoId] = useState('');
 
   const format = (string) => {
     let newStringArr = string.split(' ');
@@ -77,23 +77,25 @@ const Map = () => {
   };
 
   let formattedAdr = format(adr);
+  // console.log(formattedAdr);
 
-  // useEffect(() => {
-  //   fetch(
-  //     `https://travel-advisor.p.rapidapi.com/locations/v2/auto-complete?query=${formattedAdr}&lang=en_US&units=km`,
-  //     // `https://travel-advisor.p.rapidapi.com/locations/v2/auto-complete?query=west%20palm%20beach&lang=en_US&units=km`,
-  //     fetchOptions
-  //   )
-  //     .then((response) => response.json())
-  //     .then((response) => {
-  //       console.log(response.data.Typeahead_autocomplete.results);
-  //       setData(response.data.Typeahead_autocomplete.results);
-  //     })
-  //     .catch((err) => console.error(err));
-  // }, [formattedAdr]);
+  useEffect(() => {
+    fetch(
+      `https://travel-advisor.p.rapidapi.com/locations/v2/auto-complete?query=${formattedAdr}&lang=en_US&units=km`,
+      fetchOptions
+    )
+      .then((response) => response.json())
+      .then((response) => {
+        // console.log(response.data.Typeahead_autocomplete.results);
+        // console.log(response.data.Typeahead_autocomplete.results[0].documentId);
+        setData(response.data.Typeahead_autocomplete.results);
+        setGeoId(response.data.Typeahead_autocomplete.results[0].documentId);
+      })
+      .catch((err) => console.error(err));
+  }, [formattedAdr]);
 
   const onMapClick = useCallback((event) => {
-    console.log(event);
+    // console.log(event);
     setMarkers((current) => [
       ...current,
       {
@@ -184,6 +186,9 @@ const Map = () => {
           </p>
         </div>
       </div>
+      <Attractions />
+      <Restaurants />
+      <Hotels />
     </>
   );
 };
@@ -233,7 +238,7 @@ function Search({ panTo, setAdr }) {
           setValue(address, false);
           clearSuggestions();
           setAdr(address);
-          console.log(address);
+          // console.log(address);
           try {
             const results = await getGeocode({ address });
             const { lat, lng } = await getLatLng(results[0]);
