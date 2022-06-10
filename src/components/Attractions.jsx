@@ -48,7 +48,14 @@ const Attractions = ({ geoId }) => {
 
   return (
     <>
-      <h1>Attractions & Things to do</h1>
+      <div className="atr-title-wrap">
+        <p>
+          A<span className="white-span">&</span>TtD
+        </p>
+        <h1>
+          Attractions <span>&</span> Things to do
+        </h1>
+      </div>
       <div className="cont">
         <motion.div
           drag="x"
@@ -61,7 +68,7 @@ const Attractions = ({ geoId }) => {
           {data
             .map((data) => {
               return (
-                <div className="item">
+                <div className="atr-item">
                   <img
                     src={
                       data
@@ -107,6 +114,7 @@ const Attractions = ({ geoId }) => {
                         : 'not found'}{' '}
                       users
                     </p>
+                    <h1 className="title-back">TRVL</h1>
                   </div>
                 </div>
               );

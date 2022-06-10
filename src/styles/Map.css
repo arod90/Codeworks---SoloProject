@@ -14,9 +14,11 @@
   height: 80vh;
   width: 50vw;
   position: relative;
+  margin-bottom: 50px;
 }
 
 .info-container {
+  height: 80vh;
   width: 50vw;
   display: flex;
   flex-direction: column;

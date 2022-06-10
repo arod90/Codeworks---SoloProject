@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Charis+SIL:ital@1&family=Ubuntu:wght@300;400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Six+Caps&display=swap');
 
-.cont {
+.hot-cont {
   height: 80vh;
   width: 400vw;
 }
@@ -12,12 +13,38 @@
   -moz-box-shadow: 14px 16px 18px -1px rgba(0, 0, 0, 0.75);
   box-shadow: 14px 16px 18px -1px rgba(0, 0, 0, 0.75);
   border-radius: 10px;
-  max-height: 75vh;
+  max-height: 70vh;
   font-family: 'Ubuntu', sans-serif;
   background-color: #222222;
   color: #ffffff;
   transition: transform 0.5s;
   position: relative;
+  overflow: hidden;
+}
+
+.hot-title-wrap {
+  margin-left: 70px;
+  color: antiquewhite;
+  display: flex;
+  position: relative;
+  font-family: 'Six Caps', sans-serif;
+}
+
+.hot-title-wrap p {
+  transform: rotate(270deg);
+  font-size: 3vw;
+  left: -4%;
+  top: 33%;
+  position: absolute;
+  color: #e65634;
+}
+
+.hot-title-wrap h1 {
+  font-size: 5.8vw;
+  letter-spacing: 2px;
+}
+.hot-title-wrap span {
+  color: #e65634;
 }
 
 .hot-name {

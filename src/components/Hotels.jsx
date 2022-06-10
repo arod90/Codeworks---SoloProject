@@ -42,7 +42,14 @@ const Hotels = ({ geoId }) => {
 
   return (
     <>
-      <h1>Hotels</h1>
+      <div className="hot-title-wrap">
+        <p>
+          H<span>&</span>StS
+        </p>
+        <h1>
+          Hotels <span>&</span> Stays
+        </h1>
+      </div>
       <div className="cont">
         <motion.div
           drag="x"
@@ -128,6 +135,7 @@ const Hotels = ({ geoId }) => {
                         : 'not found'}{' '}
                       users
                     </p>
+                    <h1 className="title-back">TRVL</h1>
                   </div>
                 </div>
               );

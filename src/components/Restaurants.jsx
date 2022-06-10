@@ -42,7 +42,14 @@ const Restaurants = ({ geoId }) => {
 
   return (
     <>
-      <h1>Restaurants</h1>
+      <div className="rest-title-wrap">
+        <p className="rest-p">
+          R<span>&</span>EtS
+        </p>
+        <h1>
+          Restaurants <span>&</span> Eateries
+        </h1>
+      </div>
       <div className="cont">
         <motion.div
           drag="x"
@@ -116,6 +123,7 @@ const Restaurants = ({ geoId }) => {
                         : 'not found'}{' '}
                       users
                     </p>
+                    <h1 className="title-back">TRVL</h1>
                     <div className="res-line"></div>
                   </div>
                 </div>
