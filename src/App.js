@@ -13,9 +13,9 @@ function App() {
       <Routes>
         <Route path="/" element={<Dashboard />} />
         <Route path="/mapsearch" element={<MapSearch />} />
-        <Route path="/restaurants" element={<Restaurants />} />
-        <Route path="/attractions" element={<Attractions />} />
-        <Route path="/hotels" element={<Hotels />} />
+        {/* <Route path="/restaurants" element={<Restaurants />} />
+      <Route path="/attractions" element={<Attractions />} />
+      <Route path="/hotels" element={<Hotels />} /> */}
       </Routes>
     </div>
   );

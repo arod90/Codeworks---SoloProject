@@ -1,7 +1,13 @@
-.container {
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Oswald:wght@200;400;700&display=swap');
+.section-container {
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
   padding: 5px;
+}
+
+.top-cont {
+  display: flex;
 }
 
 .map-container {
@@ -16,6 +22,29 @@
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
+  position: relative;
+}
+
+.city-name {
+  position: absolute;
+  bottom: 20%;
+  font-size: 9vw;
+  opacity: 0.7;
+  font-family: 'Bebas Neue', cursive;
+  color: black;
+  -webkit-text-stroke: 0.01px black;
+  -webkit-text-fill-color: white;
+}
+
+.city-info {
+  position: absolute;
+  bottom: 15%;
+  font-size: 3vw;
+  opacity: 0.7;
+  font-family: 'Bebas Neue', cursive;
+  color: black;
+  -webkit-text-stroke: 0.01px black;
+  -webkit-text-fill-color: white;
 }
 
 .searchbar {
@@ -49,5 +78,6 @@
 }
 
 .img1 {
-  height: 40vh;
+  width: 100%;
+  max-height: 80%;
 }

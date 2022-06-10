@@ -1,0 +1,87 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;600&display=swap');
+.cont {
+  height: 70vh;
+  width: 400vw;
+}
+
+.item {
+  max-width: 25vw;
+  margin: 10px;
+  -webkit-box-shadow: 14px 16px 18px -1px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 14px 16px 18px -1px rgba(0, 0, 0, 0.75);
+  box-shadow: 14px 16px 18px -1px rgba(0, 0, 0, 0.75);
+  border-radius: 10px;
+  max-height: 70vh;
+  font-family: 'Source Sans Pro', sans-serif;
+  background-color: #e04038;
+  color: black;
+  transition: transform 0.5s;
+  position: relative;
+}
+
+.p-cont {
+  padding: 10px;
+}
+
+.top-p {
+  display: flex;
+  font-weight: 600;
+  font-size: 1.2vw;
+}
+
+.rating {
+  color: white;
+  font-size: 1vw;
+}
+
+.price {
+  color: white;
+  font-size: 1.3vw;
+  font-weight: 600;
+}
+
+.line {
+  background-color: black;
+  margin-top: 12px;
+  margin-right: 4px;
+  height: 5px;
+  width: 20px;
+}
+
+.title {
+  font-size: 3vh;
+  font-weight: 600;
+}
+
+.item img {
+  width: 100%;
+  border-radius: 10px 10px 0px 0px;
+}
+
+.item:hover {
+  transform: scale(1.05);
+}
+
+.atr-cont {
+  padding: 10px;
+  height: 100%;
+  display: flex;
+}
+
+.product-drag-progress-background {
+  margin: 10px;
+  width: 100vw;
+  height: 10px;
+  border-radius: 10px;
+  background: rgba(34, 34, 34, 0.2);
+  position: relative;
+}
+
+.product-drag-progress {
+  width: 0%;
+  height: 10px;
+  background: white;
+  position: absolute;
+  z-index: 2;
+  right: 0;
+}

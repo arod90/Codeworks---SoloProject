@@ -1,28 +1,27 @@
 import { Link } from 'react-router-dom';
 import React, { useEffect, useRef } from 'react';
 import '../styles/Dashboard.css';
-import { gsap } from 'gsap';
+// import { gsap } from 'gsap';
 
 const Dashboard = () => {
-  const el = useRef();
-  const q = gsap.utils.selector(el);
+  // const el = useRef();
+  // const q = gsap.utils.selector(el);
 
-  useEffect(() => {
-    gsap.fromTo(
-      q('.letter'),
-      { opacity: 0 },
-      { opacity: 1, duration: 1, stagger: 0.4 }
-    );
-  }, []);
-
-  console.log(gsap.Tw);
+  // useEffect(() => {
+  //   gsap.fromTo(
+  //     q('.letter'),
+  //     { opacity: 0 },
+  //     { opacity: 1, duration: 1, stagger: 0.4 }
+  //   );
+  // }, []);
 
   return (
     <>
       <section className="main-section">
         <div className="title-cont">
           <div className="text-cont">
-            <div className="h1-cont" ref={el}>
+            {/* <div className="h1-cont" ref={el}> */}
+            <div className="h1-cont">
               <h1 className="letter">F</h1>
               <h1 className="letter">Y</h1>
               <h1 className="letter">A</h1>

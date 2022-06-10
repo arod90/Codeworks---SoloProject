@@ -1,8 +1,16 @@
-import React, { useEffect, useState } from 'react';
-import '../styles/ApiTest.css';
+import React, { useEffect, useState, useRef } from 'react';
+import { motion, useSpring, useTransform } from 'framer-motion';
+import '../styles/Attractions.css';
 
-const Attractions = () => {
+const Attractions = ({ geoId }) => {
   const [data, setData] = useState([]);
+
+  // const constraintsRef = useRef(null);
+
+  // const ease = [0.6, 0.05, -0.01, 0.99];
+  // let x = useSpring(0, { stiffness: 300, damping: 200 });
+  // // const width = useTransform(x, [-6500, 0], [2145, 0]);
+  // const scale = useTransform(x, [-100, 0], [1.25, 1]);
 
   const options = {
     method: 'POST',
@@ -11,69 +19,107 @@ const Attractions = () => {
       'X-RapidAPI-Key': process.env.REACT_APP_RAPID_API_KEY,
       'X-RapidAPI-Host': 'travel-advisor.p.rapidapi.com',
     },
-    body: '{"geoId":187497,"startDate":"2022-03-29","endDate":"2022-03-30","pax":[{"ageBand":"ADULT","count":2}],"sort":"TRAVELER_FAVORITE_V2","sortOrder":"asc","filters":[{"id":"category","value":["11873"]}],"updateToken":""}',
+    body: `{"geoId":${geoId},"startDate":"2022-03-29","endDate":"2022-03-30","pax":[{"ageBand":"ADULT","count":2}],"sort":"TRAVELER_FAVORITE_V2","sortOrder":"asc","filters":[{"id":"category","value":["11873"]}],"updateToken":""}`,
   };
 
   useEffect(() => {
-    fetch(
-      'https://travel-advisor.p.rapidapi.com/attraction-products/v2/list?currency=USD&units=km&lang=en_US',
-      options
-    )
-      .then((response) => response.json())
-      .then((response) => {
-        console.log(
-          response.data.AppPresentation_queryAppListV2[0].sections.filter(
-            (el) => el.singleCardContent
-          )
-        );
-        const newData =
-          response.data.AppPresentation_queryAppListV2[0].sections.filter(
-            (el) => el.singleCardContent
+    if (geoId) {
+      fetch(
+        'https://travel-advisor.p.rapidapi.com/attraction-products/v2/list?currency=USD&units=km&lang=en_US',
+        options
+      )
+        .then((response) => response.json())
+        .then((response) => {
+          console.log(
+            response.data.AppPresentation_queryAppListV2[0].sections.filter(
+              (el) => el.singleCardContent
+            )
           );
-        console.log({ newData });
-        setData(newData);
-      })
-      .catch((err) => console.error(err));
-  }, []);
+          const newData =
+            response.data.AppPresentation_queryAppListV2[0].sections.filter(
+              (el) => el.singleCardContent
+            );
+          console.log({ newData });
+          setData(newData);
+        })
+        .catch((err) => console.error(err));
+    }
+  }, [geoId]);
 
   return (
     <>
-      <h1>Testing Endpoint</h1>
-      {data.map((data) => {
-        return (
-          <div className="container">
-            <img
-              src={
-                data
-                  ? data.singleCardContent.cardPhoto.sizes.urlTemplate
-                      .replace('{width}', '700')
-                      .replace('{height}', '400')
-                  : 'no url found'
-              }
-              alt=""
-            />
-            <p>
-              {data ? data.singleCardContent.cardTitle.string : 'not found'}
-            </p>
-            <p>
-              {data
-                ? data.singleCardContent.merchandisingText.htmlString
-                : 'not found'}
-            </p>
-            <p>
-              {data ? data.singleCardContent.primaryInfo.text : 'not found'}
-            </p>
-            {/* <p>
+      <h1>Attractions & Things to do</h1>
+      <div className="cont">
+        <motion.div
+          drag="x"
+          // style={{ x, scale }}
+          dragElastic={0.2}
+          // dragConstraints={constraintsRef}
+          dragConstraints={{ left: -6500, right: 0 }}
+          className="atr-cont"
+        >
+          {data
+            .map((data) => {
+              return (
+                <div className="item">
+                  <img
+                    src={
+                      data
+                        ? data.singleCardContent.cardPhoto.sizes.urlTemplate
+                            .replace('{width}', '700')
+                            .replace('{height}', '400')
+                        : 'no url found'
+                    }
+                    alt=""
+                  />
+                  <div className="p-cont">
+                    <p className="top-p">
+                      <div className="line"></div>
+                      {data && data.singleCardContent.primaryInfo
+                        ? data.singleCardContent.primaryInfo.text
+                        : 'not found'}
+                    </p>
+                    <p className="title">
+                      {data
+                        ? data.singleCardContent.cardTitle.string
+                        : 'not found'}
+                    </p>
+                    <p className="price">
+                      {data
+                        ? data.singleCardContent.merchandisingText.htmlString
+                        : 'not found'}
+                    </p>
+                    {/* <p>
               {data ? data.singleCardContent.secondaryInfo.text : 'not found'}
             </p> */}
-            <p>
-              Rating :
-              {data ? data.singleCardContent.bubbleRating.rating : 'not found'}{' '}
-              stars
-            </p>
-          </div>
-        );
-      })}
+                    <p className="rating">
+                      Rating :
+                      {data && data.singleCardContent.bubbleRating
+                        ? data.singleCardContent.bubbleRating.rating
+                        : 'not found'}{' '}
+                      stars
+                    </p>
+                    <p className="rating">
+                      Reviewed by:
+                      {data && data.singleCardContent.bubbleRating
+                        ? data.singleCardContent.bubbleRating.numberReviews
+                            .string
+                        : 'not found'}{' '}
+                      users
+                    </p>
+                  </div>
+                </div>
+              );
+            })
+            .slice(0, 15)}
+        </motion.div>
+      </div>
+      {/* <div className="product-drag-progress-background">
+        <motion.div
+          style={{ width }}
+          className="product-drag-progress"
+        ></motion.div>
+      </div> */}
     </>
   );
 };

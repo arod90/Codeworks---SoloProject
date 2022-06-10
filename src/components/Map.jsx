@@ -122,73 +122,83 @@ const Map = () => {
   if (!isLoaded) return <div>Loading...</div>;
   return (
     <>
-      <div className="container">
-        <div className="map-container">
-          <Locate panTo={panTo} />
-          <Search panTo={panTo} setAdr={setAdr} />
-          <GoogleMap
-            mapContainerClassName="map-container"
-            zoom={1.7}
-            center={center}
-            mapTypeId="satellite"
-            options={options}
-            onClick={onMapClick}
-            onLoad={onMapLoad}
-          >
-            {markers.map((marker) => (
-              <Marker
-                key={marker.time.toISOString()}
-                position={{ lat: marker.lat, lng: marker.lng }}
-                icon={{
-                  url: suitcase,
-                  scaledSize: new window.google.maps.Size(49, 49),
-                  origin: new window.google.maps.Point(0, 0),
-                  anchor: new window.google.maps.Point(25, 25),
-                }}
-                onClick={() => {
-                  setSelected(marker);
-                }}
-              />
-            ))}
-            {selected ? (
-              <InfoWindow
-                position={{ lat: selected.lat, lng: selected.lng }}
-                onCloseClick={() => {
-                  setSelected(null);
-                }}
-              >
-                <h2>👀 looking into this destination</h2>
-              </InfoWindow>
-            ) : null}
-          </GoogleMap>
-        </div>
-        <div className="info-container">
-          <h1>Destination Info</h1>
-          <img
-            className="img1"
-            src={
-              data[0]
-                ? data[0].image.photo.photoSizes[
-                    data[0].image.photo.photoSizes.length - 1
-                  ].url
-                : ''
-            }
-            alt=""
-          />
-          <h1>{data[0] ? data[0].detailsV2.names.name : ''}</h1>
-          <h4>
-            {data[0]
-              ? data[0].detailsV2.names.longOnlyHierarchyTypeaheadV2
-              : ''}
-          </h4>
-          <p>
-            {data[0] ? data[0].detailsV2.contact.streetAddress.street1 : ''}
-          </p>
+      <div className="section-container">
+        <div className="top-cont">
+          <div className="map-container">
+            <Locate panTo={panTo} />
+            <Search panTo={panTo} setAdr={setAdr} />
+            <GoogleMap
+              mapContainerClassName="map-container"
+              zoom={1.7}
+              center={center}
+              mapTypeId="satellite"
+              options={options}
+              onClick={onMapClick}
+              onLoad={onMapLoad}
+            >
+              {markers.map((marker) => (
+                <Marker
+                  key={marker.time.toISOString()}
+                  position={{ lat: marker.lat, lng: marker.lng }}
+                  icon={{
+                    url: suitcase,
+                    scaledSize: new window.google.maps.Size(49, 49),
+                    origin: new window.google.maps.Point(0, 0),
+                    anchor: new window.google.maps.Point(25, 25),
+                  }}
+                  onClick={() => {
+                    setSelected(marker);
+                  }}
+                />
+              ))}
+              {selected ? (
+                <InfoWindow
+                  position={{ lat: selected.lat, lng: selected.lng }}
+                  onCloseClick={() => {
+                    setSelected(null);
+                  }}
+                >
+                  <h2>👀 looking into this destination</h2>
+                </InfoWindow>
+              ) : null}
+            </GoogleMap>
+          </div>
+          <div className="info-container">
+            {/* <h1>Destination Info</h1> */}
+            <img
+              className="img1"
+              src={
+                data[0]
+                  ? data[0].image.photo.photoSizes[
+                      data[0].image.photo.photoSizes.length - 1
+                    ].url
+                  : ''
+              }
+              alt=""
+            />
+            <h1 className="city-name">
+              {data[0] ? data[0].detailsV2.names.name : ''}
+            </h1>
+            <h4 className="city-info">
+              {data[0]
+                ? data[0].detailsV2.names.longOnlyHierarchyTypeaheadV2
+                : ''}
+            </h4>
+            <p>
+              {data[0] ? data[0].detailsV2.contact.streetAddress.street1 : ''}
+            </p>
+          </div>
         </div>
       </div>
-      <Attractions />
-      <Restaurants />
-      <Hotels />
+      <div>
+        <Attractions geoId={geoId} />
+      </div>
+      <div>
+        <Restaurants geoId={geoId} />
+      </div>
+      <div>
+        <Hotels geoId={geoId} />
+      </div>
     </>
   );
 };
