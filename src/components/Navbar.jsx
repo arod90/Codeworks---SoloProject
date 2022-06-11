@@ -1,5 +1,6 @@
 import React from 'react';
 import '../styles/Navbar.css';
+import { Link } from 'react-scroll';
 // import { useLocation } from 'react-router-dom';
 
 const Navbar = () => {
@@ -12,9 +13,21 @@ const Navbar = () => {
       </div>
       <div className="right-side">
         <ul>
-          <li className="atr-li">Attractions</li>
-          <li className="res-li">Restaurants</li>
-          <li className="hot-li">Hotels</li>
+          <li className="atr-li">
+            <Link to="atr" smooth={true}>
+              Attractions
+            </Link>
+          </li>
+          <li className="res-li">
+            <Link to="res" smooth={true}>
+              Restaurants
+            </Link>
+          </li>
+          <li className="hot-li">
+            <Link to="hot" smooth={true}>
+              Hotels
+            </Link>
+          </li>
         </ul>
         <div className="user-info">
           {/* <p>{user ? user.displayName : 'not signed in'}</p> */}

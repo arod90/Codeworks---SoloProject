@@ -42,7 +42,7 @@ const Restaurants = ({ geoId }) => {
 
   return (
     <>
-      <div className="rest-title-wrap">
+      <div id="res" className="rest-title-wrap">
         <p className="rest-p">
           R<span>&</span>EtS
         </p>

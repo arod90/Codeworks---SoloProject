@@ -48,7 +48,7 @@ const Attractions = ({ geoId }) => {
 
   return (
     <>
-      <div className="atr-title-wrap">
+      <div id="atr" className="atr-title-wrap">
         <p>
           A<span className="white-span">&</span>TtD
         </p>
