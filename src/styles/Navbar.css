@@ -15,12 +15,14 @@
 .nav-logo {
   font-family: 'Bebas Neue', cursive;
   font-size: 6vw;
+  z-index: 5;
 }
 
 .nav-sublogo {
   font-family: 'Bebas Neue', cursive;
   font-size: 6vw;
-  opacity: 0.4;
+  opacity: 0.35;
+  color: #b028da;
   position: absolute;
   bottom: -13%;
   left: 9%;

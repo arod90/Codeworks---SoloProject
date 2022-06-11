@@ -25,6 +25,7 @@ import '../styles/Map.css';
 import Attractions from './Attractions';
 import Restaurants from './Restaurants';
 import Hotels from './Hotels';
+import minions from '../assets/svg/minions.svg';
 
 // VARIABLES
 
@@ -61,6 +62,7 @@ const Map = () => {
   const [data, setData] = useState([]);
   const [adr, setAdr] = useState('');
   const [geoId, setGeoId] = useState('');
+  const [hasSearched, setHasSearched] = useState(false);
 
   const format = (string) => {
     let newStringArr = string.split(' ');
@@ -126,10 +128,9 @@ const Map = () => {
         <div className="top-cont">
           <div className="map-container">
             <Locate panTo={panTo} />
-            <Search panTo={panTo} setAdr={setAdr} />
             <GoogleMap
               mapContainerClassName="map-container"
-              zoom={1.7}
+              zoom={3}
               center={center}
               mapTypeId="satellite"
               options={options}
@@ -164,31 +165,40 @@ const Map = () => {
             </GoogleMap>
           </div>
           <div className="info-container">
-            {/* <h1>Destination Info</h1> */}
-            <img
-              className="img1"
-              src={
-                data[0]
-                  ? data[0].image.photo.photoSizes[
-                      data[0].image.photo.photoSizes.length - 1
-                    ].url
-                  : ''
-              }
-              alt=""
-            />
-            <div className="name-cont">
-              <h1 className="city-name">
-                {data[0] ? data[0].detailsV2.names.name : ''}
-              </h1>
-              <h4 className="city-info">
-                {data[0]
-                  ? data[0].detailsV2.names.longOnlyHierarchyTypeaheadV2
-                  : ''}
-              </h4>
+            <div className="searchbar-cont">
+              <h1 className="dest-info ">Input your destination</h1>
+              <div className="bar-div">
+                <Search panTo={panTo} setAdr={setAdr} />
+              </div>
             </div>
-            <p>
-              {data[0] ? data[0].detailsV2.contact.streetAddress.street1 : ''}
-            </p>
+            <div className="img-cont">
+              <img
+                className="img1"
+                src={
+                  data[0]
+                    ? data[0].image.photo.photoSizes[
+                        data[0].image.photo.photoSizes.length - 1
+                      ].url
+                    : minions
+                }
+                alt=""
+              />
+              <div className="name-cont">
+                <h1 className="city-name">
+                  {data[0] ? data[0].detailsV2.names.name : ''}
+                </h1>
+                <h4 className="city-info">
+                  {data[0]
+                    ? data[0].detailsV2.names.longOnlyHierarchyTypeaheadV2
+                    : ''}
+                </h4>
+                <p>
+                  {data[0]
+                    ? data[0].detailsV2.contact.streetAddress.street1
+                    : ''}
+                </p>
+              </div>
+            </div>
           </div>
         </div>
       </div>
