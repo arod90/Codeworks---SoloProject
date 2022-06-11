@@ -43,9 +43,7 @@ const Hotels = ({ geoId }) => {
   return (
     <>
       <div className="hot-title-wrap">
-        <p>
-          H<span>&</span>StS
-        </p>
+        <p>H&StS</p>
         <h1>
           Hotels <span>&</span> Stays
         </h1>

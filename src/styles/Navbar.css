@@ -1,0 +1,125 @@
+@import url('https://fonts.googleapis.com/css2?family=Charis+SIL:ital@1&family=Ubuntu:wght@300;400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Six+Caps&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Oswald:wght@200;400;700&display=swap');
+
+.nav-cont {
+  height: 16vh;
+  color: bisque;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  position: relative;
+}
+
+.nav-logo {
+  font-family: 'Bebas Neue', cursive;
+  font-size: 6vw;
+}
+
+.nav-sublogo {
+  font-family: 'Bebas Neue', cursive;
+  font-size: 6vw;
+  opacity: 0.4;
+  position: absolute;
+  bottom: -13%;
+  left: 9%;
+}
+
+.left-side {
+  width: 40vw;
+  display: flex;
+  justify-content: space-between;
+}
+
+.right-side {
+  display: flex;
+}
+
+.right-side ul {
+  width: 50vw;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.right-side li {
+  list-style: none;
+  font-family: 'Ubuntu', sans-serif;
+  font-size: 2vw;
+}
+
+.atr-li {
+  position: relative;
+  cursor: pointer;
+}
+
+.atr-li:after {
+  position: absolute;
+  content: '';
+  bottom: -4px;
+  right: 0px;
+  width: 40px;
+  height: 2px;
+  background: #ffcc00;
+  -o-transition: 0.5s;
+  -ms-transition: 0.5s;
+  -moz-transition: 0.5s;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+.atr-li:hover:after {
+  width: 100%;
+  height: 6px;
+}
+
+.res-li {
+  position: relative;
+  cursor: pointer;
+}
+
+.res-li:after {
+  position: absolute;
+  content: '';
+  bottom: -4px;
+  right: 0px;
+  width: 40px;
+  height: 2px;
+  background: #12da15;
+  -o-transition: 0.5s;
+  -ms-transition: 0.5s;
+  -moz-transition: 0.5s;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+.res-li:hover:after {
+  width: 100%;
+  height: 6px;
+}
+
+.hot-li {
+  text-decoration: none;
+  position: relative;
+  cursor: pointer;
+}
+
+.hot-li:after {
+  position: absolute;
+  content: '';
+  bottom: -4px;
+  right: 0px;
+  width: 40px;
+  height: 2px;
+  background: #e65634;
+  -o-transition: 0.5s;
+  -ms-transition: 0.5s;
+  -moz-transition: 0.5s;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+.hot-li:hover:after {
+  width: 100%;
+  height: 6px;
+}

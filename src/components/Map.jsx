@@ -176,14 +176,16 @@ const Map = () => {
               }
               alt=""
             />
-            <h1 className="city-name">
-              {data[0] ? data[0].detailsV2.names.name : ''}
-            </h1>
-            <h4 className="city-info">
-              {data[0]
-                ? data[0].detailsV2.names.longOnlyHierarchyTypeaheadV2
-                : ''}
-            </h4>
+            <div className="name-cont">
+              <h1 className="city-name">
+                {data[0] ? data[0].detailsV2.names.name : ''}
+              </h1>
+              <h4 className="city-info">
+                {data[0]
+                  ? data[0].detailsV2.names.longOnlyHierarchyTypeaheadV2
+                  : ''}
+              </h4>
+            </div>
             <p>
               {data[0] ? data[0].detailsV2.contact.streetAddress.street1 : ''}
             </p>
