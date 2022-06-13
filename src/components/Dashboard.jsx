@@ -22,11 +22,18 @@ const Dashboard = () => {
           <div className="text-cont">
             {/* <div className="h1-cont" ref={el}> */}
             <div className="h1-cont">
-              <h1 className="letter">F</h1>
-              <h1 className="letter">Y</h1>
-              <h1 className="letter">A</h1>
+              <div className="title-cont1">
+                <h1 className="letter">T</h1>
+                <h1 className="letter">R</h1>
+              </div>
+              <div className="title-cont2">
+                <h1 className="letter">V</h1>
+                <h1 className="letter">L</h1>
+              </div>
             </div>
-            <h4>Find Your Adventure</h4>
+            <div className="subtitle-cont">
+              <h4>COMPANION</h4>
+            </div>
           </div>
         </div>
       </section>

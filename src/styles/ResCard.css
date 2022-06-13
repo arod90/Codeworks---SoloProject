@@ -1,0 +1,170 @@
+.cont {
+  height: 80vh;
+  width: 400vw;
+  display: flex;
+}
+
+.p-cont {
+  padding: 10px;
+}
+
+.top-p {
+  display: flex;
+  font-weight: 600;
+  font-size: 1.2vw;
+  color: white;
+}
+
+.res-rating p {
+  font-size: 1.2vw;
+  font-weight: bold;
+}
+
+.price {
+  color: white;
+  font-size: 1.3vw;
+  font-weight: 600;
+}
+
+.line {
+  background-color: black;
+  margin-top: 10px;
+  margin-right: 4px;
+  height: 5px;
+  width: 50px;
+}
+
+.title {
+  font-size: 3vh;
+  font-weight: 600;
+}
+
+.res-item img {
+  width: 100%;
+  max-height: 40%;
+  border-radius: 10px 10px 0px 0px;
+}
+
+.res-item:hover {
+  transform: scale(1.05);
+}
+
+.res-cont {
+  padding: 10px;
+  height: 100%;
+  display: flex;
+}
+
+/* .product-drag-progress-background {
+  margin: 10px;
+  width: 100vw;
+  height: 10px;
+  border-radius: 10px;
+  background: rgba(34, 34, 34, 0.2);
+  position: relative;
+}
+
+.product-drag-progress {
+  width: 0%;
+  height: 10px;
+  background: white;
+  position: absolute;
+  z-index: 2;
+  right: 0;
+} */
+
+.title-back {
+  font-size: 10vw;
+  position: absolute;
+  bottom: -10%;
+  left: 21%;
+  color: rgb(60, 58, 58);
+  opacity: 0.3;
+  font-family: 'Source Sans Pro', sans-serif;
+}
+
+.switch {
+  width: 80px;
+  height: 50px;
+  background-color: rgba(255, 255, 255, 0.4);
+  display: flex;
+  justify-content: flex-start;
+  border-radius: 50px;
+  padding: 5px;
+  cursor: pointer;
+  position: absolute;
+  top: 1%;
+  right: 1%;
+}
+
+.switch[data-isOn='true'] {
+  justify-content: flex-end;
+  /* background-color: #b028da4f; */
+}
+.res-item[data-isOn='true'] {
+  background-color: #b028da;
+}
+
+.handle {
+  width: 40px;
+  height: 40px;
+  background-color: white;
+  border-radius: 40px;
+}
+
+.handle[data-isOn='true'] {
+  background-color: #b028da;
+}
+
+.res-name {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 700;
+  font-size: 1.5vw;
+  margin-bottom: 10px;
+}
+
+.menu-link {
+  margin: 5px;
+  padding: 15px;
+  text-align: center;
+  background-color: #ffcc00;
+  width: 40%;
+  height: 20;
+  border: 2px solid black;
+  cursor: pointer;
+  border-radius: 2px;
+}
+
+.menu-link a {
+  text-decoration: none;
+  font-size: 1.2vw;
+  color: black;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 700;
+}
+
+.res-info {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 1.45vw;
+}
+
+.res-rating {
+  font-family: 'Crimson Text', serif;
+  font-weight: 600;
+  font-size: 1.5vw;
+}
+
+.res-line {
+  background-color: #ffcc00;
+  margin-top: 12px;
+  margin-right: 4px;
+  height: 7px;
+  width: 140px;
+  position: absolute;
+  bottom: 5%;
+  right: 1%;
+}
+
+.res-item:hover {
+  transform: scale(1.05);
+}

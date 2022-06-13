@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { motion, useSpring, useTransform } from 'framer-motion';
 import '../styles/Hotels.css';
+import HotCard from './HotCard';
 
 const Hotels = ({ geoId }) => {
   const [data, setData] = useState([]);
@@ -25,11 +26,11 @@ const Hotels = ({ geoId }) => {
       //   console.log(response);
       // })
       .then((response) => {
-        console.log(
-          response.data.AppPresentation_queryAppListV2[0].sections.filter(
-            (el) => el.singleCardContent
-          )
-        );
+        // console.log(
+        //   response.data.AppPresentation_queryAppListV2[0].sections.filter(
+        //     (el) => el.singleCardContent
+        //   )
+        // );
         const newData =
           response.data.AppPresentation_queryAppListV2[0].sections.filter(
             (el) => el.singleCardContent
@@ -48,99 +49,18 @@ const Hotels = ({ geoId }) => {
           Hotels <span>&</span> Stays
         </h1>
       </div>
-      <div className="cont">
-        <motion.div
-          drag="x"
-          // style={{ x, scale }}
-          dragElastic={0.2}
-          // dragConstraints={constraintsRef}
-          dragConstraints={{ left: -6500, right: 0 }}
-          className="hot-cont"
-        >
-          {data
-            .map((data) => {
-              return (
-                <div className="hot-item">
-                  <img
-                    src={
-                      data && data.singleCardContent.cardPhotos[0]
-                        ? data.singleCardContent.cardPhotos[
-                            data.singleCardContent.cardPhotos.length - 1
-                          ].sizes.urlTemplate
-                            .replace('{width}', '700')
-                            .replace('{height}', '400')
-                        : 'no url found'
-                    }
-                    alt=""
-                  />
-                  <div className="p-cont">
-                    <p className="hot-adr">
-                      {data && data.singleCardContent.secondaryInfo
-                        ? data.singleCardContent.secondaryInfo.text
-                        : 'not found'}
-                    </p>
-                    <div className="hot-line"></div>
-                    <p className="hot-name">
-                      {data
-                        ? data.singleCardContent.cardTitle.string
-                        : 'not found'}
-                    </p>
-                    <div className="hot-line"></div>
-                    <p className="hot-link">
-                      {data &&
-                      data.singleCardContent.commerceButtons &&
-                      data.singleCardContent.commerceButtons.singleButton.link
-                        .externalUrl ? (
-                        <a
-                          href={
-                            data.singleCardContent.commerceButtons.singleButton
-                              .link.externalUrl
-                          }
-                          target="_blank"
-                          rel="noopener noreferrer"
-                        >
-                          Book Hotel
-                        </a>
-                      ) : (
-                        'booking website not found'
-                      )}
-                    </p>
-                    <p className="hot-info">
-                      Average cost per night:
-                      {data &&
-                      data.singleCardContent.commerceInfo &&
-                      data.singleCardContent.commerceInfo.priceForDisplay
-                        ? data.singleCardContent.commerceInfo.priceForDisplay
-                            .string
-                        : 'not found'}{' '}
-                      USD
-                    </p>
-                    {/* <p>
-              {data ? data.singleCardContent.secondaryInfo.text : 'not found'}
-            </p> */}
-                    <p className="hot-rating">
-                      Rating :
-                      {data && data.singleCardContent.bubbleRating
-                        ? data.singleCardContent.bubbleRating.rating
-                        : 'not found'}{' '}
-                      stars
-                    </p>
-                    <p className="hot-rating">
-                      Reviewed by:
-                      {data && data.singleCardContent.bubbleRating
-                        ? data.singleCardContent.bubbleRating.numberReviews
-                            .string
-                        : 'not found'}{' '}
-                      users
-                    </p>
-                    <h1 className="title-back">TRVL</h1>
-                  </div>
-                </div>
-              );
-            })
-            .slice(0, 15)}
-        </motion.div>
-      </div>
+      <motion.div
+        drag="x"
+        // style={{ x, scale }}
+        dragElastic={0.2}
+        // dragConstraints={constraintsRef}
+        dragConstraints={{ left: -7500, right: 0 }}
+        className="cont"
+      >
+        {data.slice(0, 30).map((data) => (
+          <HotCard data={data} />
+        ))}
+      </motion.div>
     </>
   );
 };

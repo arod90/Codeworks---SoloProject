@@ -62,7 +62,6 @@ const Map = () => {
   const [data, setData] = useState([]);
   const [adr, setAdr] = useState('');
   const [geoId, setGeoId] = useState('');
-  const [hasSearched, setHasSearched] = useState(false);
 
   const format = (string) => {
     let newStringArr = string.split(' ');
@@ -88,8 +87,6 @@ const Map = () => {
     )
       .then((response) => response.json())
       .then((response) => {
-        // console.log(response.data.Typeahead_autocomplete.results);
-        // console.log(response.data.Typeahead_autocomplete.results[0].documentId);
         setData(response.data.Typeahead_autocomplete.results);
         setGeoId(response.data.Typeahead_autocomplete.results[0].documentId);
       })
@@ -166,7 +163,7 @@ const Map = () => {
           </div>
           <div className="info-container">
             <div className="searchbar-cont">
-              <h1 className="dest-info ">Input your destination</h1>
+              <h1 className="dest-info">Input your destination</h1>
               <div className="bar-div">
                 <Search panTo={panTo} setAdr={setAdr} />
               </div>

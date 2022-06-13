@@ -8,12 +8,14 @@
 
 .hot-item {
   max-width: 25vw;
+  min-width: 25vw;
+
   margin: 10px;
   -webkit-box-shadow: 14px 16px 18px -1px rgba(0, 0, 0, 0.75);
   -moz-box-shadow: 14px 16px 18px -1px rgba(0, 0, 0, 0.75);
   box-shadow: 14px 16px 18px -1px rgba(0, 0, 0, 0.75);
   border-radius: 10px;
-  max-height: 70vh;
+  max-height: 80vh;
   font-family: 'Ubuntu', sans-serif;
   background-color: #222222;
   color: #ffffff;
@@ -45,72 +47,4 @@
 }
 .hot-title-wrap span {
   color: #e65634;
-}
-
-.hot-name {
-  font-family: 'Charis SIL', serif;
-  font-weight: 700;
-  font-size: 1.5vw;
-  margin: 5px 0 5px 0;
-}
-
-.hot-link {
-  margin: 15px;
-  padding: 5px;
-  text-align: center;
-  background-color: #e65634;
-  width: 40%;
-  height: 20;
-  border: 2px solid black;
-  cursor: pointer;
-  border-radius: 2px;
-}
-
-.hot-link a {
-  text-decoration: none;
-  color: white;
-  font-family: 'Ubuntu', sans-serif;
-  font-weight: 700;
-}
-
-.hot-info {
-  font-family: 'Ubuntu', sans-serif;
-  font-size: 1.2vw;
-}
-
-.hot-rating {
-  font-family: 'Ubuntu', sans-serif;
-  font-size: 1vw;
-}
-
-.hot-item img {
-  width: 100%;
-  border-radius: 10px 10px 0px 0px;
-}
-
-.hot-item:hover {
-  transform: scale(1.05);
-}
-
-.p-cont p {
-  margin-top: 5px;
-}
-
-.hot-cont {
-  padding: 10px;
-  width: 100%;
-  display: flex;
-}
-
-.hot-adr {
-  color: #e65634;
-  font-family: 'Ubuntu', sans-serif;
-  margin-bottom: 5px;
-}
-
-.hot-line {
-  background-color: #e65634;
-  width: 100%;
-  height: 1px;
-  margin-bottom: 10px;
 }

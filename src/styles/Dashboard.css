@@ -19,6 +19,14 @@
   position: relative;
 }
 
+.title-cont1 {
+  display: flex;
+}
+
+.title-cont2 {
+  display: flex;
+}
+
 .text-cont {
   position: relative;
   text-align: center;
@@ -47,7 +55,7 @@
 }
 
 .title-cont h4 {
-  font-size: 10vh;
+  font-size: 14vh;
   font-family: 'Archivo', sans-serif;
   font-weight: 600;
   margin-left: 40px;

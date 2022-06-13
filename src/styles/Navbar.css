@@ -62,7 +62,8 @@
   right: 0px;
   width: 40px;
   height: 2px;
-  background: #ffcc00;
+  background: #12da15;
+
   -o-transition: 0.5s;
   -ms-transition: 0.5s;
   -moz-transition: 0.5s;
@@ -87,7 +88,8 @@
   right: 0px;
   width: 40px;
   height: 2px;
-  background: #12da15;
+  background: #ffcc00;
+
   -o-transition: 0.5s;
   -ms-transition: 0.5s;
   -moz-transition: 0.5s;
