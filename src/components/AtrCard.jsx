@@ -2,9 +2,20 @@ import React, { useState } from 'react';
 import { motion, useSpring, useTransform } from 'framer-motion';
 import '../styles/AtrCard.css';
 
-const AtrCard = ({ data }) => {
+const AtrCard = ({ data, setFavorites }) => {
   const [isOn, setIsOn] = useState(false);
-  const toggleSwitch = () => setIsOn(!isOn);
+  const toggleSwitch = () => {
+    // setFavorites((prev) => {
+    //   return [
+    //     ...prev.filter(
+    //       (el) =>
+    //         el.singleCardContent.saveId.id !== data.singleCardContent.saveId.id
+    //     ),
+    //     data,
+    //   ];
+    // });
+    setIsOn(!isOn);
+  };
   const spring = {
     type: 'spring',
     stiffness: 700,

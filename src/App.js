@@ -4,18 +4,24 @@ import './App.css';
 import Dashboard from './components/Dashboard';
 import LoginReg from './components/LoginReg';
 import MapSearch from './components/MapSearch';
-import Navbar from './components/Navbar';
+import Profile from './components/Profile';
+import { AuthContextProvider } from './context/AuthContext';
+import { FavContext } from './context/FavContext';
 
 function App() {
   return (
-    <div className="app-cont">
-      <Routes>
-        <Route path="/" element={<Dashboard />} />
-        <Route path="/mapsearch" element={<MapSearch />} />
-        <Route path="/loginreg" element={<LoginReg />} />
-        <Route path="/navbar" element={<Navbar />} />
-      </Routes>
-    </div>
+    <AuthContextProvider>
+      {/* <FavContext.Provider> */}
+      <div className="app-cont">
+        <Routes>
+          <Route path="/" element={<Dashboard />} />
+          <Route path="/mapsearch" element={<MapSearch />} />
+          <Route path="/loginreg" element={<LoginReg />} />
+          <Route path="/profile" element={<Profile />} />
+        </Routes>
+      </div>
+      {/* </FavContext.Provider> */}
+    </AuthContextProvider>
   );
 }
 

@@ -2,6 +2,7 @@
   height: 80vh;
   width: 400vw;
   display: flex;
+  padding: 5px;
 }
 
 .p-cont {
@@ -141,6 +142,8 @@
 
 .hot-link a {
   text-decoration: none;
+  font-size: 1.1vw;
+
   color: white;
   font-family: 'Ubuntu', sans-serif;
   font-weight: 700;

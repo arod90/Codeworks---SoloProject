@@ -22,21 +22,20 @@ const Restaurants = ({ geoId }) => {
       options
     )
       .then((response) => response.json())
-      // .then((response) => {
-      //   console.log(response);
-      // })
       .then((response) => {
-        // console.log(
-        //   response.data.AppPresentation_queryAppListV2[0].sections.filter(
-        //     (el) => el.singleCardContent
-        //   )
-        // );
         const newData =
           response.data.AppPresentation_queryAppListV2[0].sections.filter(
             (el) => el.singleCardContent
           );
-        console.log({ newData });
-        setData(newData);
+        let newArr = [];
+        newData.map((a) => {
+          if (a.singleCardContent.commerceButtons.singleButton) {
+            newArr.unshift(a);
+          } else {
+            newArr.push(a);
+          }
+        });
+        setData(newArr);
       })
       .catch((err) => console.error(err));
   }, [geoId]);
@@ -57,8 +56,8 @@ const Restaurants = ({ geoId }) => {
         dragConstraints={{ left: -7500, right: 0 }}
         className="cont"
       >
-        {data.slice(0, 30).map((data) => (
-          <ResCard data={data} />
+        {data.slice(0, 30).map((data, id) => (
+          <ResCard key={id} data={data} />
         ))}
       </motion.div>
     </>

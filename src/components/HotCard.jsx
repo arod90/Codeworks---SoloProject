@@ -36,7 +36,15 @@ const HotCard = ({ data }) => {
                 </p>
                 <div className="hot-line"></div>
                 <p className="hot-name">
-                  {data ? data.singleCardContent.cardTitle.string : 'not found'}
+                  {data
+                    ? data.singleCardContent.cardTitle.string
+                        .split(' ')
+                        .slice(
+                          1,
+                          data.singleCardContent.cardTitle.string.length - 1
+                        )
+                        .join(' ')
+                    : 'not found'}
                 </p>
                 <div className="hot-line"></div>
                 <p className="hot-link">
@@ -59,28 +67,27 @@ const HotCard = ({ data }) => {
                   )}
                 </p>
                 <p className="hot-info">
-                  Average cost per night:
+                  Average cost per night:<br></br>
                   {data &&
                   data.singleCardContent.commerceInfo &&
                   data.singleCardContent.commerceInfo.priceForDisplay
                     ? data.singleCardContent.commerceInfo.priceForDisplay.string
-                    : 'not found'}{' '}
-                  USD
+                    : ' no prices listed'}{' '}
                 </p>
                 <p className="hot-rating">
-                  Rating :
+                  Rating :{' '}
                   {data && data.singleCardContent.bubbleRating
                     ? data.singleCardContent.bubbleRating.rating
                     : 'not found'}{' '}
-                  stars
+                  / 5
                 </p>
-                <p className="hot-rating">
+                {/* <p className="hot-rating">
                   Reviewed by:
                   {data && data.singleCardContent.bubbleRating
                     ? data.singleCardContent.bubbleRating.numberReviews.string
                     : 'not found'}{' '}
                   users
-                </p>
+                </p> */}
                 <div className="switch" data-isOn={isOn} onClick={toggleSwitch}>
                   <motion.div
                     data-isOn={isOn}

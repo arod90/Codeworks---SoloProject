@@ -23,12 +23,20 @@ const Dashboard = () => {
             {/* <div className="h1-cont" ref={el}> */}
             <div className="h1-cont">
               <div className="title-cont1">
-                <h1 className="letter">T</h1>
-                <h1 className="letter">R</h1>
+                <div className="t-cont">
+                  <h1 className="letter">T</h1>
+                </div>
+                <div className="r-cont">
+                  <h1 className="letter">R</h1>
+                </div>
               </div>
               <div className="title-cont2">
-                <h1 className="letter">V</h1>
-                <h1 className="letter">L</h1>
+                <div className="v-cont">
+                  <h1 className="letter">V</h1>
+                </div>
+                <div className="l-cont">
+                  <h1 className="letter">L</h1>
+                </div>
               </div>
             </div>
             <div className="subtitle-cont">
@@ -39,13 +47,20 @@ const Dashboard = () => {
       </section>
       <section className="second-section">
         <div className="second-title-cont">
-          <h2 className="second-title">Adventure</h2>
-          <h4 className="second-subtitle">One Click Away</h4>
-          <button className="start">
-            <Link className="link" to="/mapsearch">
-              Get Started
+          <h2 className="second-title">TRVL Companion</h2>
+          <h4 className="second-subtitle">
+            Is a web service that lets you browse Activities, book Hotels, and
+            check out Restaurant menus in a given destination.
+            <br />
+            <br />
+            currently supports all major cities & offers limited support for
+            smaller towns and suburbs
+          </h4>
+          <div className="btn-cont">
+            <Link className="link" to="/loginreg">
+              <button className="start">Get Started</button>
             </Link>
-          </button>
+          </div>
         </div>
       </section>
     </>

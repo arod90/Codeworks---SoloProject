@@ -22,21 +22,21 @@ const Hotels = ({ geoId }) => {
       options
     )
       .then((response) => response.json())
-      // .then((response) => {
-      //   console.log(response);
-      // })
       .then((response) => {
-        // console.log(
-        //   response.data.AppPresentation_queryAppListV2[0].sections.filter(
-        //     (el) => el.singleCardContent
-        //   )
-        // );
         const newData =
           response.data.AppPresentation_queryAppListV2[0].sections.filter(
             (el) => el.singleCardContent
           );
-        console.log({ newData });
-        setData(newData);
+        console.log(newData);
+        let newArr = [];
+        newData.map((a) => {
+          if (a.singleCardContent.commerceButtons) {
+            newArr.unshift(a);
+          } else {
+            newArr.push(a);
+          }
+        });
+        setData(newArr);
       })
       .catch((err) => console.error(err));
   }, [geoId]);
@@ -57,8 +57,8 @@ const Hotels = ({ geoId }) => {
         dragConstraints={{ left: -7500, right: 0 }}
         className="cont"
       >
-        {data.slice(0, 30).map((data) => (
-          <HotCard data={data} />
+        {data.slice(1, 30).map((data, id) => (
+          <HotCard key={id} data={data} />
         ))}
       </motion.div>
     </>

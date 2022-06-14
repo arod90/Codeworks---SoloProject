@@ -28,7 +28,15 @@ const ResCard = ({ data }) => {
               />
               <div className="p-cont">
                 <p className="res-name">
-                  {data ? data.singleCardContent.cardTitle.string : 'not found'}
+                  {data
+                    ? data.singleCardContent.cardTitle.string
+                        .split(' ')
+                        .slice(
+                          1,
+                          data.singleCardContent.cardTitle.string.length - 1
+                        )
+                        .join(' ')
+                    : 'not found'}
                 </p>
                 <p className="menu-link">
                   {data &&

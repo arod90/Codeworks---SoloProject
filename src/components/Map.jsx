@@ -25,7 +25,8 @@ import '../styles/Map.css';
 import Attractions from './Attractions';
 import Restaurants from './Restaurants';
 import Hotels from './Hotels';
-import minions from '../assets/svg/minions.svg';
+import surv from '../assets/svg/surv.svg';
+import spinner from '../assets/svg/perfwedge.svg';
 
 // VARIABLES
 
@@ -62,6 +63,8 @@ const Map = () => {
   const [data, setData] = useState([]);
   const [adr, setAdr] = useState('');
   const [geoId, setGeoId] = useState('');
+  const [hasSearched, setHasSearched] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
 
   const format = (string) => {
     let newStringArr = string.split(' ');
@@ -81,6 +84,7 @@ const Map = () => {
   // console.log(formattedAdr);
 
   useEffect(() => {
+    setIsLoading(true);
     fetch(
       `https://travel-advisor.p.rapidapi.com/locations/v2/auto-complete?query=${formattedAdr}&lang=en_US&units=km`,
       fetchOptions
@@ -89,6 +93,7 @@ const Map = () => {
       .then((response) => {
         setData(response.data.Typeahead_autocomplete.results);
         setGeoId(response.data.Typeahead_autocomplete.results[0].documentId);
+        setIsLoading(false);
       })
       .catch((err) => console.error(err));
   }, [formattedAdr]);
@@ -163,32 +168,55 @@ const Map = () => {
           </div>
           <div className="info-container">
             <div className="searchbar-cont">
-              <h1 className="dest-info">Input your destination</h1>
+              {hasSearched === false ? (
+                <h1 className="dest-info">
+                  Start here 👇🏼 input your destination of interest
+                </h1>
+              ) : (
+                <h1 className="dest-info">
+                  Search for your next destination 👀
+                </h1>
+              )}
               <div className="bar-div">
-                <Search panTo={panTo} setAdr={setAdr} />
+                <Search
+                  className="searchbar"
+                  panTo={panTo}
+                  setHasSearched={setHasSearched}
+                  setAdr={setAdr}
+                />
               </div>
             </div>
             <div className="img-cont">
+              {/* {isLoading ? (
+                <h1 className="load">Loading...</h1>
+              ) : ( */}
               <img
                 className="img1"
                 src={
                   data[0]
-                    ? data[0].image.photo.photoSizes[
-                        data[0].image.photo.photoSizes.length - 1
-                      ].url
-                    : minions
+                    ? isLoading
+                      ? spinner
+                      : data[0].image.photo.photoSizes[
+                          data[0].image.photo.photoSizes.length - 1
+                        ].url
+                    : surv
                 }
                 alt=""
               />
+              {/* )} */}
               <div className="name-cont">
-                <h1 className="city-name">
-                  {data[0] ? data[0].detailsV2.names.name : ''}
-                </h1>
-                <h4 className="city-info">
-                  {data[0]
-                    ? data[0].detailsV2.names.longOnlyHierarchyTypeaheadV2
-                    : ''}
-                </h4>
+                {!isLoading && (
+                  <>
+                    <h1 className="city-name">
+                      {data[0] ? data[0].detailsV2.names.name : ''}
+                    </h1>
+                    <h4 className="city-info">
+                      {data[0]
+                        ? data[0].detailsV2.names.longOnlyHierarchyTypeaheadV2
+                        : ''}
+                    </h4>
+                  </>
+                )}
                 <p>
                   {data[0]
                     ? data[0].detailsV2.contact.streetAddress.street1
@@ -237,7 +265,7 @@ function Locate({ panTo }) {
 
 // SEARCH FUNCTION
 
-function Search({ panTo, setAdr }) {
+function Search({ panTo, setAdr, setHasSearched }) {
   const {
     ready,
     value,
@@ -257,6 +285,7 @@ function Search({ panTo, setAdr }) {
           setValue(address, false);
           clearSuggestions();
           setAdr(address);
+          setHasSearched(true);
           // console.log(address);
           try {
             const results = await getGeocode({ address });
@@ -274,13 +303,17 @@ function Search({ panTo, setAdr }) {
             setValue(e.target.value);
           }}
           disabled={!ready}
-          placeholder="Where do you want to go?"
+          placeholder="  So, where do you want to go?"
         />
         <ComboboxPopover>
-          <ComboboxList>
+          <ComboboxList className="list">
             {status === 'OK' &&
               data.map(({ id, description }) => (
-                <ComboboxOption key={description} value={description} />
+                <ComboboxOption
+                  className="option"
+                  key={description}
+                  value={description}
+                />
               ))}
           </ComboboxList>
         </ComboboxPopover>

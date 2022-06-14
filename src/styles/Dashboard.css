@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Archivo:wght@300;400;600;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Questrial&display=swap');
 
 .main-section {
   background-image: url('../assets/nightmesa.jpg');
@@ -30,21 +31,41 @@
 .text-cont {
   position: relative;
   text-align: center;
-  height: 80vh;
-  width: 70vw;
+  height: 100vh;
+  width: 100vw;
   margin-bottom: 10px;
-  background: url('../assets/car.gif');
-  background-position: 35% -90%;
-  background-size: 80%;
-  background-clip: inherit;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
 }
 
 .text-cont h1 {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.title-cont1 {
+  background: url('../assets/gifs/pool.gif');
+  background-size: cover;
+  background-position: 15% -120%;
+  background-clip: inherit;
+  margin-right: -80px;
+  /* position: absolute;
+  top: 5%;
+  left: 15%; */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  padding: 50px;
+}
+.title-cont2 {
+  background: url('../assets/gifs/boat.gif');
+  background-size: cover;
+  background-position: 15% 50%;
+  /* position: absolute;
+  top: 20%;
+  left: 47%; */
+  padding: 50px;
+  background-clip: inherit;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .title-cont h1 {
@@ -55,7 +76,7 @@
 }
 
 .title-cont h4 {
-  font-size: 14vh;
+  font-size: 19vh;
   font-family: 'Archivo', sans-serif;
   font-weight: 600;
   margin-left: 40px;
@@ -71,34 +92,77 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  width: 100%;
+}
+
+.subtitle-cont {
+  background: url('../assets/car.gif');
+  background-position: 45% 50%;
+  /* position: absolute;
+  bottom: 5%;
+  left: 20%; */
+  margin-top: -100px;
+  background-size: cover;
+  background-clip: inherit;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 /* SECOND SECTION */
 
 .second-section {
-  background-image: url('../assets/grandC.jpg');
+  background-image: url('../assets/back2.jpg');
   background-size: cover;
   height: 100vh;
   width: 100vw;
+  position: relative;
 }
 
 .second-title-cont {
+  padding: 50px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  width: 100vw;
-  padding-bottom: 100px;
+  text-align: right;
+  width: 60%;
+  position: absolute;
+  right: 1%;
   color: rgba(0, 0, 0, 0.671);
 }
 
 .second-title {
-  font-size: 30vh;
+  font-size: 10vh;
   font-family: 'Archivo', sans-serif;
   font-weight: 800;
+  text-align: end;
 }
 
 .second-subtitle {
-  font-size: 10vh;
+  font-size: 4.5vh;
+  font-family: 'Questrial', sans-serif;
+}
+
+.btn-cont {
+  height: 20vh;
+  width: 85vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.start {
+  width: 15vw;
+  cursor: pointer;
+  height: 100px;
+  border: none;
+  border-radius: 3px;
+  background: #ff5a31;
+  border: 1px solid black;
+  font-family: 'Archivo', sans-serif;
+  font-weight: 700;
+  font-size: 1.3vw;
+}
+
+.link {
+  color: black;
+  text-decoration: none;
 }
