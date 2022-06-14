@@ -57,8 +57,8 @@
 }
 .title-cont2 {
   background: url('../assets/gifs/boat.gif');
-  background-size: cover;
-  background-position: 15% 50%;
+  background-size: contain;
+  background-position: 100%;
   /* position: absolute;
   top: 20%;
   left: 47%; */
