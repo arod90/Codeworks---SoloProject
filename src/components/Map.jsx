@@ -25,7 +25,7 @@ import '../styles/Map.css';
 import Attractions from './Attractions';
 import Restaurants from './Restaurants';
 import Hotels from './Hotels';
-import surv from '../assets/svg/surv.svg';
+import surv from '../assets/svg/world.svg';
 import spinner from '../assets/svg/perfwedge.svg';
 
 // VARIABLES
