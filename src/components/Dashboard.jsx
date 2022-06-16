@@ -60,6 +60,9 @@ const Dashboard = () => {
             <Link className="link" to="/loginreg">
               <button className="start">Get Started</button>
             </Link>
+            <Link to="/stack">
+              <span className="hidden-dev">👨🏽‍💻</span>
+            </Link>
           </div>
         </div>
       </section>

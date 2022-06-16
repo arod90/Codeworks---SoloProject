@@ -166,3 +166,13 @@
   color: black;
   text-decoration: none;
 }
+
+.hidden-dev {
+  font-size: 80px;
+  cursor: pointer;
+  opacity: 0;
+}
+
+.hidden-dev:hover {
+  opacity: 1;
+}

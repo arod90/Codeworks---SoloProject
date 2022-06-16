@@ -59,7 +59,7 @@ const Navbar = () => {
                 Logout
               </button>
             ) : (
-              <Link2 to="/loginreg">
+              <Link2 to="/">
                 <button className="log-btn">Sign in</button>
               </Link2>
             )}
