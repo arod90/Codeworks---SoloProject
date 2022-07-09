@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import React, { useEffect, useRef } from 'react';
 import '../styles/Dashboard.css';
+import scroll from '../assets/svg/scroll.svg';
 // import { gsap } from 'gsap';
 
 const Dashboard = () => {
@@ -44,6 +45,7 @@ const Dashboard = () => {
             </div>
           </div>
         </div>
+        <img className="scroll" src={scroll} alt="" />
       </section>
       <section className="second-section">
         <div className="second-title-cont">
