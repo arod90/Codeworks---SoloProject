@@ -159,7 +159,7 @@
   border: 1px solid black;
   font-family: 'Archivo', sans-serif;
   font-weight: 700;
-  font-size: 1.5vw;
+  font-size: 1.3vw;
 }
 
 .start:active {
@@ -179,13 +179,4 @@
 
 .hidden-dev:hover {
   opacity: 1;
-}
-
-.scroll {
-  position: absolute;
-  z-index: 100;
-  bottom: 0;
-  right: 45%;
-  height: 80px;
-  opacity: 0.8;
 }

@@ -1,14 +1,26 @@
 import { Link } from 'react-router-dom';
 import React, { useEffect, useRef } from 'react';
 import '../styles/Dashboard.css';
-import scroll from '../assets/svg/scroll.svg';
+// import { gsap } from 'gsap';
 
 const Dashboard = () => {
+  // const el = useRef();
+  // const q = gsap.utils.selector(el);
+
+  // useEffect(() => {
+  //   gsap.fromTo(
+  //     q('.letter'),
+  //     { opacity: 0 },
+  //     { opacity: 1, duration: 1, stagger: 0.4 }
+  //   );
+  // }, []);
+
   return (
     <>
       <section className="main-section">
         <div className="title-cont">
           <div className="text-cont">
+            {/* <div className="h1-cont" ref={el}> */}
             <div className="h1-cont">
               <div className="title-cont1">
                 <div className="t-cont">
@@ -32,7 +44,6 @@ const Dashboard = () => {
             </div>
           </div>
         </div>
-        <img className='scroll' src={scroll} alt="" />
       </section>
       <section className="second-section">
         <div className="second-title-cont">
