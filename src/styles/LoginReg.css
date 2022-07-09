@@ -4,8 +4,16 @@
   align-items: center;
   height: 100vh;
   width: 100vw;
-  background: url('../assets/fire.jpg');
-  background-size: cover;
+  background-color: #2e282a;
+  position: relative;
+}
+
+.h1-back {
+  position: absolute;
+  opacity: 0.3;
+  font-size: 50vw;
+  bottom: 0%;
+  right: -14%;
 }
 
 .form-wrapper h3 {
@@ -19,6 +27,23 @@
   width: 70vw;
   display: flex;
   justify-content: space-evenly;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 10;
+}
+
+.form-cont h2 {
+  cursor: pointer;
+  padding: 12px;
+  background-color: rgba(250, 235, 215, 0.847);
+  color: #2e282a;
+  border: 2px solid #2e282a;
+  border-radius: 5px;
+}
+
+.form-cont h2:active {
+  transform: translateY(2px);
 }
 
 .login-form {
@@ -60,8 +85,15 @@
 }
 
 .g-singin {
-  width: 100%;
+  width: 28%;
   margin-top: 20px;
+  cursor: pointer;
+  margin-bottom: 20px;
+  border-radius: 5px;
+}
+
+.g-singin:active {
+  transform: translateY(2px);
 }
 
 .g-singin p {

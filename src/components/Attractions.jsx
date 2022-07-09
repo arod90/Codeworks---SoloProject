@@ -63,29 +63,18 @@ const Attractions = ({ geoId }) => {
       </div>
       <motion.div
         drag="x"
-        // style={{ x, scale }}
         dragElastic={0.2}
-        // dragConstraints={constraintsRef}
         dragConstraints={{ left: -7500, right: 0 }}
         className="cont"
       >
-        {/* {data
-          .slice(0, 30)
-          .map((data, id) =>
-            isLoading ? (
-              <img className="card-spinner" src={spinner} alt="spinner" />
-            ) : (
-              <AtrCard key={id} data={data} />
-            )
-          )} */}
         {data.length ? (
           data.slice(0, 30).map((data, id) => <AtrCard key={id} data={data} />)
         ) : (
-          <img className="card-spinner" src={spinner} alt="spinner" />
+          <div className="search-for-city">
+            <h3>Search for a city to see Attraction suggestions!</h3>
+          </div>
+          // <img className="card-spinner" src={spinner} alt="spinner" />
         )}
-        {/* {favorites.map((data, id) => (
-          <AtrCard setFavorites={setFavorites} key={id} data={data} />
-        ))} */}
       </motion.div>
     </>
   );

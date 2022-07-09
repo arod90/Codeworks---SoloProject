@@ -56,9 +56,14 @@ const Restaurants = ({ geoId }) => {
         dragConstraints={{ left: -7500, right: 0 }}
         className="cont"
       >
-        {data.slice(0, 30).map((data, id) => (
-          <ResCard key={id} data={data} />
-        ))}
+        {data.length ? (
+          data.slice(0, 30).map((data, id) => <ResCard key={id} data={data} />)
+        ) : (
+          <div className="search-for-city">
+            <h3>Search for a city to see Restaurant suggestions!</h3>
+          </div>
+          // <img className="card-spinner" src={spinner} alt="spinner" />
+        )}
       </motion.div>
     </>
   );

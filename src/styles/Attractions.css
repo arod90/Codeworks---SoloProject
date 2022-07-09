@@ -45,3 +45,24 @@
 .white-span {
   color: antiquewhite;
 }
+
+.search-for-city {
+  display: flex;
+  align-items: center;
+  justify-content: left;
+  margin-left: 200px;
+  width: 100%;
+}
+
+.search-for-city h3 {
+  color: antiquewhite;
+  font-size: 2.5vw;
+  margin-left: 10px;
+  animation: blinker 2.5s linear infinite;
+}
+
+@keyframes blinker {
+  50% {
+    opacity: 0;
+  }
+}

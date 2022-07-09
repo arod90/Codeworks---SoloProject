@@ -36,6 +36,10 @@ const LoginReg = () => {
     }
   };
 
+  const guestView = () => {
+    navigate('/mapsearch');
+  };
+
   useEffect(() => {
     if (user !== null) {
       navigate('/mapsearch');
@@ -45,8 +49,14 @@ const LoginReg = () => {
   return (
     <>
       <div className="form-wrapper">
+        <h1 className="h1-back">TRVL</h1>
         <div className="form-cont">
-          <div className="login-form" action="">
+          <button className="g-singin" onClick={handleGoogleSignIn}>
+            <p>Sign-in with Google</p>{' '}
+            <img className="glogo" src={glogo} alt="" />
+          </button>
+          <h2 onClick={guestView}>Or continue as a Guest</h2>
+          {/* <div className="login-form" action="">
             <h3>Login</h3>
             <input
               type="text"
@@ -63,12 +73,7 @@ const LoginReg = () => {
               placeholder="Enter your Password"
             />
             <button onClick={handleLogin}>Sign-In</button>
-            <div>
-              <button className="g-singin" onClick={handleGoogleSignIn}>
-                <p>Sign-in with Google</p>{' '}
-                <img className="glogo" src={glogo} alt="" />
-              </button>
-            </div>
+            <div></div>
           </div>
           <div className="reg-form" action="">
             <h3>Register</h3>
@@ -87,7 +92,7 @@ const LoginReg = () => {
               placeholder="Enter your Password"
             />
             <button onClick={handleRegister}>Register</button>
-          </div>
+          </div> */}
         </div>
       </div>
     </>
