@@ -69,6 +69,7 @@
   color: bisque;
   font-family: 'Ubuntu', sans-serif;
   margin-bottom: 10px;
+  text-align: center;
 }
 
 .searchbar input {
@@ -138,4 +139,57 @@
 
 .spinner {
   margin-bottom: 100px;
+}
+
+@media screen and (max-width: 960px) {
+  .dest-info {
+    font-size: 2.3vw;
+  }
+  .searchbar input {
+    font-size: 20px;
+    height: 5vh;
+    width: 30vw;
+  }
+  .img1 {
+    display: none;
+  }
+
+  .searchbar-cont {
+    margin-top: 200px;
+  }
+  .list {
+    font-size: 3vw;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .top-cont {
+    flex-direction: column-reverse;
+  }
+  .info-container {
+    width: 100%;
+    max-height: 200px;
+    margin-top: 20px;
+  }
+  .img-cont {
+    display: none;
+  }
+  .searchbar-cont {
+    margin-top: 0;
+  }
+  .dest-info {
+    font-size: 5vw;
+  }
+  .searchbar input {
+    font-size: 25px;
+    height: 5vh;
+    width: 80vw;
+  }
+  .map-container {
+    width: 100vw;
+    height: 65vh;
+  }
+  .list {
+    font-size: 5vw;
+  }
 }

@@ -296,7 +296,7 @@ function Search({ panTo, setAdr, setHasSearched }) {
             setValue(e.target.value);
           }}
           disabled={!ready}
-          placeholder="  So, where do you want to go?"
+          placeholder=" So, where to next?"
         />
         <ComboboxPopover>
           <ComboboxList className="list">

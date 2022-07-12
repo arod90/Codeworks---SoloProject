@@ -64,7 +64,6 @@
   width: 40px;
   height: 2px;
   background: #12da15;
-
   -o-transition: 0.5s;
   -ms-transition: 0.5s;
   -moz-transition: 0.5s;
@@ -176,4 +175,70 @@
   position: absolute;
   right: -15%;
   opacity: 0;
+}
+
+@media screen and (max-width: 960px) {
+  .nav-cont {
+    height: 10vh;
+  }
+  .nav-logo {
+    font-size: 8vw;
+  }
+  .nav-sublogo {
+    font-size: 8vw;
+  }
+  .user-info {
+    font-size: 1.8vw;
+  }
+  .user-info p {
+    display: none;
+  }
+
+  .user-pic {
+    display: none;
+  }
+  .log-btn {
+    font-size: 1.4vw;
+    margin-top: 15px;
+    width: 140%;
+  }
+  .right-side li {
+    margin-top: 15px;
+    font-size: 2.5vw;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .left-side {
+    width: 80vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .right-side {
+    width: 20vw;
+  }
+  .link-cont {
+    display: none;
+  }
+  .log-btn {
+    font-size: 4vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    border: 1px solid bisque;
+    width: 120%;
+  }
+  .right-side li {
+    display: none;
+  }
+  .nav-logo {
+    font-size: 13vw;
+    margin-right: 50px;
+  }
+  .nav-sublogo {
+    font-size: 13vw;
+    left: 37%;
+  }
 }

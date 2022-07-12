@@ -72,3 +72,65 @@
 .glogo {
   width: 25px;
 }
+
+@media screen and (max-width: 400px) {
+  .login-form {
+    width: 40vw;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .g-singin {
+    width: 88% !important;
+    margin-top: 20px;
+    cursor: pointer;
+    margin-bottom: 20px;
+    border-radius: 5px;
+  }
+
+  .g-singin:active {
+    transform: translateY(2px);
+  }
+
+  .g-singin p {
+    font-size: 6.2vw !important;
+    cursor: pointer;
+  }
+  .form-cont h2 {
+    font-size: 5vw !important;
+  }
+  .h1-back {
+    top: 7%;
+  }
+}
+
+@media screen and (max-width: 960px) {
+  .login-form {
+    width: 40vw;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .g-singin {
+    width: 58%;
+    margin-top: 20px;
+    cursor: pointer;
+    margin-bottom: 20px;
+    border-radius: 5px;
+  }
+
+  .g-singin:active {
+    transform: translateY(2px);
+  }
+
+  .g-singin p {
+    font-size: 4.2vw;
+    cursor: pointer;
+  }
+  .form-cont h2 {
+    font-size: 3vw;
+  }
+  .h1-back {
+    top: 7%;
+  }
+}

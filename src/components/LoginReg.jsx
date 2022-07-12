@@ -30,7 +30,7 @@ const LoginReg = () => {
         <h1 className="h1-back">TRVL</h1>
         <div className="form-cont">
           <button className="g-singin" onClick={handleGoogleSignIn}>
-            <p>Sign-in with Google</p> <FcGoogle size={35} />
+            <p>Sign-in with Google</p> <FcGoogle className="glogo" size={35} />
           </button>
           <h2 onClick={guestView}>Or continue as a Guest</h2>
         </div>

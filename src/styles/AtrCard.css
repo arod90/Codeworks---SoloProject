@@ -2,6 +2,7 @@
   height: 80vh;
   width: 400vw;
   display: flex;
+  border: 1px solid red;
 }
 
 .p-cont {
@@ -118,4 +119,26 @@
 
 .handle[data-isOn='true'] {
   background-color: #b028da;
+}
+
+@media screen and (max-width: 960px) {
+  .cont {
+    height: 60vh !important;
+  }
+  .atr-item {
+    height: 50vh;
+    min-width: 70vw;
+  }
+  .p-cont p {
+    font-size: 3vw;
+  }
+  .atr-title {
+    font-size: 4vw !important;
+  }
+  .atr-price {
+    font-size: 4vw !important;
+  }
+  .atr-rating {
+    font-size: 4vw !important;
+  }
 }
