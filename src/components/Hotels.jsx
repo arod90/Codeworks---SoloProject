@@ -27,7 +27,6 @@ const Hotels = ({ geoId }) => {
           response.data.AppPresentation_queryAppListV2[0].sections.filter(
             (el) => el.singleCardContent
           );
-        console.log(newData);
         let newArr = [];
         newData.map((a) => {
           if (a.singleCardContent.commerceButtons) {

@@ -81,7 +81,6 @@ const Map = () => {
   };
 
   let formattedAdr = format(adr);
-  // console.log(formattedAdr);
 
   useEffect(() => {
     setIsLoading(true);
@@ -99,7 +98,6 @@ const Map = () => {
   }, [formattedAdr]);
 
   const onMapClick = useCallback((event) => {
-    // console.log(event);
     setMarkers((current) => [
       ...current,
       {

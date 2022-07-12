@@ -11,9 +11,7 @@ const LoginReg = () => {
   const handleGoogleSignIn = async () => {
     try {
       await googleSignIn();
-    } catch (error) {
-      console.log(error.message);
-    }
+    } catch (error) {}
   };
 
   const guestView = () => {
