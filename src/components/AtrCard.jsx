@@ -23,7 +23,7 @@ const AtrCard = ({ data, setFavorites }) => {
   };
   return (
     <>
-      <div className="cont">
+      <div>
         <div className="card">
           <div className="atr-cont">
             <div data-isOn={isOn} className="atr-item">

@@ -12,7 +12,7 @@ const HotCard = ({ data }) => {
   };
   return (
     <>
-      <div className="cont">
+      <div>
         <div className="card">
           <div className="hot-cont">
             <div data-isOn={isOn} className="hot-item">

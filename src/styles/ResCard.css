@@ -1,11 +1,9 @@
-.cont {
-  height: 80vh;
-  width: 400vw;
-  display: flex;
-}
-
 .p-cont {
   padding: 10px;
+}
+
+.card {
+  height: 80vh;
 }
 
 .top-p {

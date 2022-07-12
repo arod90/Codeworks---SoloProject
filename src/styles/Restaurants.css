@@ -1,5 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Crimson+Text:wght@400;600;700&family=Open+Sans:wght@400;600;700&family=Oswald:wght@200;400;700&display=swap');
 
+.cont {
+  overflow-y: scroll;
+  min-height: 85vh;
+  width: 100vw;
+  display: flex;
+}
+
 .res-item {
   max-width: 25vw;
   min-width: 25vw;
@@ -15,6 +22,7 @@
   transition: transform 0.5s;
   position: relative;
   overflow: hidden;
+  height: 80vh;
 }
 
 .rest-title-wrap {

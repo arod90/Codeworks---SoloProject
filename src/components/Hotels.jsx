@@ -48,12 +48,7 @@ const Hotels = ({ geoId }) => {
           Hotels <span>&</span> Stays
         </h1>
       </div>
-      <motion.div
-        drag="x"
-        dragElastic={0.2}
-        dragConstraints={{ left: -7500, right: 0 }}
-        className="cont"
-      >
+      <div className="cont">
         {data.length ? (
           data.slice(0, 30).map((data, id) => <HotCard key={id} data={data} />)
         ) : (
@@ -61,7 +56,7 @@ const Hotels = ({ geoId }) => {
             <h3>Search for a city to see Hotel suggestions!</h3>
           </div>
         )}
-      </motion.div>
+      </div>
     </>
   );
 };

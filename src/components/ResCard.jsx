@@ -12,7 +12,7 @@ const ResCard = ({ data }) => {
   };
   return (
     <>
-      <div className="cont">
+      <div>
         <div className="card">
           <div className="res-cont">
             <div data-isOn={isOn} className="res-item">

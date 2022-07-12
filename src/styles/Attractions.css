@@ -1,5 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;600&display=swap');
 
+.cont {
+  overflow-y: scroll;
+  min-height: 85vh;
+  width: 100vw;
+  display: flex;
+}
+
 .atr-item {
   max-width: 25vw;
   min-width: 25vw;
@@ -15,6 +22,7 @@
   transition: transform 0.5s;
   position: relative;
   overflow: hidden;
+  height: 80vh;
 }
 
 .atr-title-wrap {
@@ -79,6 +87,11 @@
     font-size: 4.5vw;
     margin-left: 0px;
   }
+  .search-for-city h3 {
+    position: absolute;
+    left: 5%;
+    font-size: 5vw;
+  }
 }
 
 @media screen and (max-width: 400px) {
@@ -86,11 +99,16 @@
     margin-left: 40px;
   }
   .atr-title-wrap h1 {
-    font-size: 12vw;
+    font-size: 10vw;
     margin-left: 20px;
   }
   .atr-title-wrap p {
     font-size: 5.5vw;
     margin-left: 0px;
+  }
+  .search-for-city h3 {
+    position: absolute;
+    left: 5%;
+    font-size: 5vw;
   }
 }
