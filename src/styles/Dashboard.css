@@ -8,6 +8,7 @@
   background-repeat: no-repeat;
   height: 100vh;
   width: 100vw;
+  position: relative;
 }
 
 .title-cont {
@@ -76,7 +77,8 @@
 }
 
 .title-cont h4 {
-  font-size: 19vh;
+  font-size: 22vh;
+  letter-spacing: 9px;
   font-family: 'Archivo', sans-serif;
   font-weight: 600;
   margin-left: 40px;
@@ -142,24 +144,28 @@
 }
 
 .btn-cont {
-  height: 20vh;
-  width: 85vw;
   display: flex;
   justify-content: center;
   align-items: center;
+  position: absolute;
+  bottom: 8%;
+  right: 50%;
+  transform: translateX(50%);
 }
 
 .start {
   width: 15vw;
   cursor: pointer;
-  height: 100px;
+  height: 80px;
   border: none;
-  border-radius: 3px;
-  background: #ff5a31;
-  border: 1px solid black;
+  border-radius: 5px;
+  background: transparent;
+  border: 3px solid white;
+  color: white;
   font-family: 'Archivo', sans-serif;
-  font-weight: 700;
-  font-size: 1.3vw;
+  font-weight: 600;
+  font-size: 1.5vw;
+  letter-spacing: 2px;
 }
 
 .start:active {

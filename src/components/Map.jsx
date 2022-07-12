@@ -187,9 +187,6 @@ const Map = () => {
               </div>
             </div>
             <div className="img-cont">
-              {/* {isLoading ? (
-                <h1 className="load">Loading...</h1>
-              ) : ( */}
               <img
                 className="img1"
                 src={
@@ -203,7 +200,6 @@ const Map = () => {
                 }
                 alt=""
               />
-              {/* )} */}
               <div className="name-cont">
                 {!isLoading && (
                   <>
@@ -286,7 +282,6 @@ function Search({ panTo, setAdr, setHasSearched }) {
           clearSuggestions();
           setAdr(address);
           setHasSearched(true);
-          // console.log(address);
           try {
             const results = await getGeocode({ address });
             const { lat, lng } = await getLatLng(results[0]);

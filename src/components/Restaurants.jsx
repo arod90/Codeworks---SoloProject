@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { motion, useSpring, useTransform } from 'framer-motion';
+import { motion } from 'framer-motion';
 import '../styles/Restaurants.css';
 import ResCard from './ResCard';
 
@@ -50,9 +50,7 @@ const Restaurants = ({ geoId }) => {
       </div>
       <motion.div
         drag="x"
-        // style={{ x, scale }}
         dragElastic={0.2}
-        // dragConstraints={constraintsRef}
         dragConstraints={{ left: -7500, right: 0 }}
         className="cont"
       >
@@ -62,7 +60,6 @@ const Restaurants = ({ geoId }) => {
           <div className="search-for-city">
             <h3>Search for a city to see Restaurant suggestions!</h3>
           </div>
-          // <img className="card-spinner" src={spinner} alt="spinner" />
         )}
       </motion.div>
     </>

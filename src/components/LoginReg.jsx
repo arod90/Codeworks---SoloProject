@@ -1,11 +1,11 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import { UserAuth } from '../context/AuthContext';
 import { useNavigate } from 'react-router-dom';
 import glogo from '../assets/glogo.png';
 import '../styles/LoginReg.css';
 
 const LoginReg = () => {
-  const { googleSignIn, register, login, user } = UserAuth();
+  const { googleSignIn, user } = UserAuth();
   const navigate = useNavigate();
 
   const handleGoogleSignIn = async () => {

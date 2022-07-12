@@ -1,26 +1,11 @@
-import React, { useEffect, useState, useRef } from 'react';
-import { motion, useSpring, useTransform } from 'framer-motion';
+import React, { useEffect, useState } from 'react';
+import { motion } from 'framer-motion';
 import '../styles/Attractions.css';
 import AtrCard from './AtrCard';
-import spinner from '../assets/svg/perfwedge.svg';
 
 const Attractions = ({ geoId }) => {
   const [data, setData] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
-  // const [favorites, setFavorites] = useState([]);
-
-  // const [isOn, setIsOn] = useState(false);
-
-  // const toggleSwitch = (e) => {
-  //   setIsOn(!isOn);
-  //   console.log(e);
-  // };
-
-  // const spring = {
-  //   type: 'spring',
-  //   stiffness: 700,
-  //   damping: 30,
-  // };
 
   const options = {
     method: 'POST',
@@ -73,7 +58,6 @@ const Attractions = ({ geoId }) => {
           <div className="search-for-city">
             <h3>Search for a city to see Attraction suggestions!</h3>
           </div>
-          // <img className="card-spinner" src={spinner} alt="spinner" />
         )}
       </motion.div>
     </>

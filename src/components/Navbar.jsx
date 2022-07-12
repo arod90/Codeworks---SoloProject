@@ -22,7 +22,7 @@ const Navbar = () => {
     <div className="nav-cont">
       <div className="left-side">
         <div className="nav-logo">TRVL</div>
-        <div className="nav-sublogo">COMPANION</div>
+        <div className="nav-sublogo">ADVISOR</div>
       </div>
       <div className="right-side">
         <div className="link-cont">

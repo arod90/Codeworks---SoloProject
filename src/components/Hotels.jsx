@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { motion, useSpring, useTransform } from 'framer-motion';
+import { motion } from 'framer-motion';
 import '../styles/Hotels.css';
 import HotCard from './HotCard';
 
@@ -51,9 +51,7 @@ const Hotels = ({ geoId }) => {
       </div>
       <motion.div
         drag="x"
-        // style={{ x, scale }}
         dragElastic={0.2}
-        // dragConstraints={constraintsRef}
         dragConstraints={{ left: -7500, right: 0 }}
         className="cont"
       >
@@ -63,7 +61,6 @@ const Hotels = ({ geoId }) => {
           <div className="search-for-city">
             <h3>Search for a city to see Hotel suggestions!</h3>
           </div>
-          // <img className="card-spinner" src={spinner} alt="spinner" />
         )}
       </motion.div>
     </>

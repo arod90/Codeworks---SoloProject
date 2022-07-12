@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { motion, useSpring, useTransform } from 'framer-motion';
+import { motion } from 'framer-motion';
 import '../styles/HotCard.css';
 
 const HotCard = ({ data }) => {
@@ -81,13 +81,6 @@ const HotCard = ({ data }) => {
                     : 'not found'}{' '}
                   / 5
                 </p>
-                {/* <p className="hot-rating">
-                  Reviewed by:
-                  {data && data.singleCardContent.bubbleRating
-                    ? data.singleCardContent.bubbleRating.numberReviews.string
-                    : 'not found'}{' '}
-                  users
-                </p> */}
                 <div className="switch" data-isOn={isOn} onClick={toggleSwitch}>
                   <motion.div
                     data-isOn={isOn}
