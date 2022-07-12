@@ -92,6 +92,9 @@
     left: 5%;
     font-size: 5vw;
   }
+  .atr-item {
+    height: 70vh !important;
+  }
 }
 
 @media screen and (max-width: 400px) {
@@ -110,5 +113,8 @@
     position: absolute;
     left: 5%;
     font-size: 5vw;
+  }
+  .atr-item {
+    height: 70vh !important;
   }
 }

@@ -195,7 +195,12 @@
     display: none;
   }
   .btn-cont {
-    margin-bottom: 200px;
+    margin-bottom: 100px !important;
+  }
+  .start {
+    height: 60px;
+    border: 2px solid #ffffffce;
+    font-weight: 500;
   }
 }
 

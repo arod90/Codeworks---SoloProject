@@ -63,6 +63,16 @@
     font-size: 4.5vw;
     margin-left: 0px;
   }
+  .res-item {
+    height: 70vh !important;
+  }
+  .menu-link {
+    height: fit-content !important;
+    width: 60% !important;
+  }
+  .menu-link a {
+    font-size: 4vw !important;
+  }
 }
 
 @media screen and (max-width: 400px) {
@@ -76,5 +86,12 @@
   .rest-title-wrap p {
     font-size: 6.5vw;
     margin-left: 0px;
+  }
+  .res-item {
+    height: 70vh !important;
+  }
+  .hot-link {
+    height: fit-content !important;
+    width: 60% !important;
   }
 }

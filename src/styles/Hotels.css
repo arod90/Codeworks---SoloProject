@@ -63,6 +63,13 @@
     font-size: 4.5vw;
     margin-left: 0px;
   }
+  .hot-item {
+    min-height: 70vh !important;
+  }
+  .hot-link {
+    height: fit-content !important;
+    width: 60% !important;
+  }
 }
 
 @media screen and (max-width: 400px) {
@@ -76,5 +83,12 @@
   .hot-title-wrap p {
     font-size: 7.5vw;
     margin-left: 0px;
+  }
+  .hot-item {
+    min-height: 70vh !important;
+  }
+  .hot-link {
+    height: fit-content !important;
+    width: 60% !important;
   }
 }
